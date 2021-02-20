@@ -4,7 +4,6 @@ import com.ironhack.opportunity.enums.Product;
 import com.ironhack.opportunity.enums.Status;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 import static com.ironhack.opportunity.utils.Colors.*;
 
