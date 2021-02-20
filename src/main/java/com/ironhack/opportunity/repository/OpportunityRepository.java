@@ -28,38 +28,38 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
     @Query("SELECT o.product, COUNT(*) FROM Opportunity o WHERE o.status = :status GROUP BY o.product")
     List<Object[]> findNumberOfOpportunitiesPerProductWithStatus(@Param("status") Status status);
 
-    @Query("SELECT a.city, COUNT(*) FROM Opportunity o JOIN Account a ON a.accountId = o.account GROUP BY a.city")
+    @Query("SELECT a.city, COUNT(*) FROM Opportunity o JOIN Account a ON a.id = o.account GROUP BY a.city")
     List<Object[]> findNumberOfOpportunitiesPerCity();
 
-    @Query("SELECT a.city, COUNT(*) FROM Opportunity o JOIN Account a ON a.accountId = o.account WHERE o.status = :status GROUP BY a.city")
+    @Query("SELECT a.city, COUNT(*) FROM Opportunity o JOIN Account a ON a.id = o.account WHERE o.status = :status GROUP BY a.city")
     List<Object[]> findNumberOfOpportunitiesPerCityWithStatus(@Param("status") Status status);
 
-    @Query("SELECT a.country, COUNT(*) FROM Opportunity o JOIN Account a ON a.accountId = o.account GROUP BY a.country")
+    @Query("SELECT a.country, COUNT(*) FROM Opportunity o JOIN Account a ON a.id = o.account GROUP BY a.country")
     List<Object[]> findNumberOfOpportunitiesPerCountry();
 
-    @Query("SELECT a.country, COUNT(*) FROM Opportunity o JOIN Account a ON a.accountId = o.account WHERE o.status = :status GROUP BY a.country")
+    @Query("SELECT a.country, COUNT(*) FROM Opportunity o JOIN Account a ON a.id = o.account WHERE o.status = :status GROUP BY a.country")
     List<Object[]> findNumberOfOpportunitiesPerCountryWithStatus(@Param("status") Status status);
 
-    @Query("SELECT a.industry, COUNT(*) FROM Opportunity o JOIN Account a ON a.accountId = o.account GROUP BY a.industry")
+    @Query("SELECT a.industry, COUNT(*) FROM Opportunity o JOIN Account a ON a.id = o.account GROUP BY a.industry")
     List<Object[]> findNumberOfOpportunitiesPerIndustry();
 
-    @Query("SELECT a.industry, COUNT(*) FROM Opportunity o JOIN Account a ON a.accountId = o.account WHERE o.status = :status GROUP BY a.industry")
+    @Query("SELECT a.industry, COUNT(*) FROM Opportunity o JOIN Account a ON a.id = o.account WHERE o.status = :status GROUP BY a.industry")
     List<Object[]> findNumberOfOpportunitiesPerIndustryWithStatus(@Param("status") Status status);
 
     @Query(value = "SELECT CAST(AVG(oo.count) AS double) FROM (SELECT COUNT(o.opportunity_id) AS count FROM `account` a " +
-            "LEFT JOIN opportunity o ON a.account_id = o.account_id GROUP BY a.account_id) AS oo", nativeQuery = true)
+            "LEFT JOIN opportunity o ON a.id = o.account_id GROUP BY a.id) AS oo", nativeQuery = true)
     Object[] findAvgOpportunitiesByAccountId();
 
     @Query(value = "SELECT CAST(MAX(oo.count) AS double) FROM (SELECT COUNT(o.opportunity_id) AS count FROM `account` a " +
-            "LEFT JOIN opportunity o ON a.account_id = o.account_id GROUP BY a.account_id) AS oo", nativeQuery = true)
+            "LEFT JOIN opportunity o ON a.id = o.account_id GROUP BY a.id) AS oo", nativeQuery = true)
     Object[] findMaxOpportunitiesByAccountId();
 
     @Query(value = "SELECT CAST(MIN(oo.count) AS double) FROM (SELECT COUNT(o.opportunity_id) AS count FROM `account` a " +
-            "LEFT JOIN opportunity o ON a.account_id = o.account_id GROUP BY a.account_id) AS oo", nativeQuery = true)
+            "LEFT JOIN opportunity o ON a.id = o.account_id GROUP BY a.id) AS oo", nativeQuery = true)
     Object[] findMinOpportunitiesByAccountId();
 
     @Query(value = "SELECT CAST(oo.count AS DOUBLE) FROM (SELECT COUNT(o.opportunity_id) AS count FROM `account` a " +
-            "LEFT JOIN opportunity o ON a.account_id = o.account_id GROUP BY a.account_id) AS oo ORDER BY count", nativeQuery = true)
+            "LEFT JOIN opportunity o ON a.id = o.account_id GROUP BY a.id) AS oo ORDER BY count", nativeQuery = true)
     List<Object[]> findOrderOpportunitiesByAccountId();
 
 //  Quantity statistics grouped by product
