@@ -99,13 +99,9 @@ public class OpportunityService implements IOpportunityService {
 
     @Override
     public List<Object[]> medianQuantityByProduct() {
-        List<Object[]> objectsList = new ArrayList<>();
-        Object[] objects = new Object[2];
-        for (Product product: Product.values()){
-            objects[0] = product.toString();
-            objects[1] = opportunityRepository.findOrderedQuantity(product.toString());
-            objectsList.add(objects);
-        }
+        List<Object[]> objectsList = List.of(new Object[]{"HYBRID", opportunityRepository.findOrderedQuantity("HYBRID")},
+                                             new Object[]{"FLATBED", opportunityRepository.findOrderedQuantity("FLATBED")},
+                                             new Object[]{"BOX", opportunityRepository.findOrderedQuantity("BOX")});
         return objectsList;
     }
 }
