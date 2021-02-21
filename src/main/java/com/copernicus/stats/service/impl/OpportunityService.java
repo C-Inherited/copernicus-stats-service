@@ -5,7 +5,6 @@ import com.copernicus.stats.repository.AccountRepository;
 import com.copernicus.stats.repository.ContactRepository;
 import com.copernicus.stats.repository.OpportunityRepository;
 import com.copernicus.stats.service.interfaces.IOpportunityService;
-import com.copernicus.stats.controller.DTO.OpportunityDTO;
 import com.copernicus.stats.enums.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static com.copernicus.stats.utils.Math.median;
 

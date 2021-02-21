@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public interface OpportunityRepository extends JpaRepository<Opportunity, Integer> {
 
-
     @Query("SELECT o.product, COUNT(*) FROM Opportunity o GROUP BY o.product")
     List<Object[]> findNumberOfOpportunitiesPerProduct();
 

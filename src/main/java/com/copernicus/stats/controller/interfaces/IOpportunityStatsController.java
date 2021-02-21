@@ -1,11 +1,9 @@
 package com.copernicus.stats.controller.interfaces;
 
-import com.copernicus.stats.controller.DTO.OpportunityDTO;
-
 import java.util.List;
 import java.util.Optional;
 
-public interface IOpportunityController {
+public interface IOpportunityStatsController {
 
 
     List<Object[]> countOpportunitiesByProduct(Optional<String> status);

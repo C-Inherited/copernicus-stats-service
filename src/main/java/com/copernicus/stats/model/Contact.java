@@ -30,13 +30,13 @@ public class Contact {
         setCompanyName(companyName);
     }
 
-//    public Contact(String name, String phoneNumber, String email, String companyName, Account account) {
-//        setName(name);
-//        setPhoneNumber(phoneNumber);
-//        setEmail(email);
-//        setCompanyName(companyName);
-//        setAccount(account);
-//    }
+    public Contact(String name, String phoneNumber, String email, String companyName, Account account) {
+        setName(name);
+        setPhoneNumber(phoneNumber);
+        setEmail(email);
+        setCompanyName(companyName);
+        setAccount(account);
+    }
 
     public String getName() {
         return name;

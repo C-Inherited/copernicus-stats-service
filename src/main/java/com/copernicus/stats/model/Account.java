@@ -60,7 +60,6 @@ public class Account {
         getOpportunityList().add(opportunity);
     }
 
-
     public int getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package com.copernicus.stats.controller.DTO;
+package com.copernicus.stats.dto;
 
 import javax.validation.constraints.NotNull;
 

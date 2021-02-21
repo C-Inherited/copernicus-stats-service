@@ -1,6 +1,6 @@
 package com.copernicus.stats.client;
 
-import com.copernicus.stats.controller.DTO.LeadDTO;
+import com.copernicus.stats.dto.LeadDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

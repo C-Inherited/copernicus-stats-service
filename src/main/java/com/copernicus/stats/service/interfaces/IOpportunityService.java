@@ -1,7 +1,5 @@
 package com.copernicus.stats.service.interfaces;
 
-import com.copernicus.stats.controller.DTO.OpportunityDTO;
-
 import java.util.List;
 import java.util.Optional;
 

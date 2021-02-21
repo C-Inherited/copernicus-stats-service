@@ -10,15 +10,15 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Integer> {
 
-    @Query("SELECT AVG(a.employeeCount) FROM Account a")
-    Object[] findMeanEmployeeCount();
+    @Query("SELECT CAST(AVG(a.employeeCount) AS DOUBLE) FROM Account a")
+    Double findMeanEmployeeCount();
 
     @Query(value = "SELECT CAST(employee_count AS DOUBLE) FROM account ORDER BY employee_count", nativeQuery = true)
-    List<Object[]> orderEmployeeCount();
+    List<Double> orderEmployeeCount();
 
-    @Query("SELECT MIN(a.employeeCount) FROM Account a")
-    Object[] findMinEmployeeCount();
+    @Query("SELECT CAST(MIN(a.employeeCount) AS INTEGER) FROM Account a")
+    Integer findMinEmployeeCount();
 
-    @Query("SELECT MAX(a.employeeCount) FROM Account a")
-    Object[] findMaxEmployeeCount();
+    @Query("SELECT CAST(MAX(a.employeeCount) AS INTEGER) FROM Account a")
+    Integer findMaxEmployeeCount();
 }

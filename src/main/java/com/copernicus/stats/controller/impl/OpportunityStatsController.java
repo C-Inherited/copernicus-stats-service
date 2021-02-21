@@ -1,8 +1,7 @@
 package com.copernicus.stats.controller.impl;
 
-import com.copernicus.stats.controller.interfaces.IOpportunityController;
+import com.copernicus.stats.controller.interfaces.IOpportunityStatsController;
 import com.copernicus.stats.service.interfaces.IOpportunityService;
-import com.copernicus.stats.controller.DTO.OpportunityDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class OpportunityController implements IOpportunityController {
+public class OpportunityStatsController implements IOpportunityStatsController {
 
     @Autowired
     IOpportunityService opportunityService;
