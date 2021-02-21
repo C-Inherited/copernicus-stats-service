@@ -7,7 +7,6 @@ import java.util.Optional;
 
 public interface IOpportunityController {
 
-    List<OpportunityDTO> countOpportunitiesBySalesRep(Integer salesRepId, Optional<String> status);
 
     List<Object[]> countOpportunitiesByProduct(Optional<String> status);
 

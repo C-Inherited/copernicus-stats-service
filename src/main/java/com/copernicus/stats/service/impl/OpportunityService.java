@@ -29,17 +29,6 @@ public class OpportunityService implements IOpportunityService {
 
 
     @Override
-    public List<OpportunityDTO> countOpportunitiesBySalesRep(Integer salesRepId, Optional<String> status) {
-        if (status.isEmpty()){
-            return opportunityRepository.getOpportunityBySalesRepId(salesRepId).stream()
-                    .map(opportunity -> OpportunityDTO.parseFromOpportunity(opportunity)).collect(Collectors.toList());
-        }else{
-            return opportunityRepository.getOpportunityBySalesRepIdAndStatus(salesRepId, Status.valueOf(status.get())).stream()
-                    .map(opportunity -> OpportunityDTO.parseFromOpportunity(opportunity)).collect(Collectors.toList());
-        }
-    }
-
-    @Override
     public List<Object[]> countOpportunitiesByProduct(Optional<String> status) {
         if (status.isEmpty()) {
             return opportunityRepository.findNumberOfOpportunitiesPerProduct();

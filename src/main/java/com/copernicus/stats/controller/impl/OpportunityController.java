@@ -15,11 +15,6 @@ public class OpportunityController implements IOpportunityController {
     @Autowired
     IOpportunityService opportunityService;
 
-    @GetMapping("/opportunities/all/{salesRepId}")
-    public List<OpportunityDTO> countOpportunitiesBySalesRep(@PathVariable Integer salesRepId, @RequestParam Optional<String> status) {
-        return opportunityService.countOpportunitiesBySalesRep(salesRepId, status);
-    }
-
     @GetMapping("/opportunities/count/by/product")
     public List<Object[]> countOpportunitiesByProduct(Optional<String> status) {
         return opportunityService.countOpportunitiesByProduct(status);
