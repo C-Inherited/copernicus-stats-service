@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ironhack</groupId>
-	<artifactId>opportunity</artifactId>
+	<artifactId>stats-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>opportunity</name>
-	<description>Opportunity service for Copernicus CRM</description>
+	<name>stats-service</name>
+	<description>Stats service for Copernicus CRM</description>
 	<properties>
 		<java.version>15</java.version>
 		<spring-cloud.version>2020.0.1</spring-cloud.version>
@@ -41,6 +41,14 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
 		<dependency>
