@@ -60,11 +60,11 @@ public class Account {
         getOpportunityList().add(opportunity);
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -76,11 +76,11 @@ public class Account {
         this.industry = industry;
     }
 
-    public int getEmployeeCount() {
+    public Integer getEmployeeCount() {
         return employeeCount;
     }
 
-    public void setEmployeeCount(int employeeCount) {
+    public void setEmployeeCount(Integer employeeCount) {
         this.employeeCount = employeeCount;
     }
 
@@ -116,7 +116,7 @@ public class Account {
         this.opportunityList = opportunityList;
     }
 
-    // Override of the toString() method to display the Accounts in a more friendly way.
+// Override of the toString() method to display the Accounts in a more friendly way.
 
     @Override
     public String toString() {

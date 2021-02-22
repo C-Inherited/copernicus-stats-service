@@ -3,8 +3,7 @@ package com.copernicus.stats.service.interfaces;
 import java.util.List;
 import java.util.Optional;
 
-public interface IOpportunityService {
-
+public interface IOpportunityStatsService {
 
     List<Object[]> countOpportunitiesByProduct(Optional<String> status);
 

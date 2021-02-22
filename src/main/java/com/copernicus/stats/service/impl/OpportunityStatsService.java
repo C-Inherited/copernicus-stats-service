@@ -4,27 +4,21 @@ import com.copernicus.stats.enums.Product;
 import com.copernicus.stats.repository.AccountRepository;
 import com.copernicus.stats.repository.ContactRepository;
 import com.copernicus.stats.repository.OpportunityRepository;
-import com.copernicus.stats.service.interfaces.IOpportunityService;
+import com.copernicus.stats.service.interfaces.IOpportunityStatsService;
 import com.copernicus.stats.enums.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static com.copernicus.stats.utils.Math.median;
 
 @Service
-public class OpportunityService implements IOpportunityService {
+public class OpportunityStatsService implements IOpportunityStatsService {
 
     @Autowired
     OpportunityRepository opportunityRepository;
-    @Autowired
-    ContactRepository contactRepository;
-    @Autowired
-    AccountRepository accountRepository;
-
 
     @Override
     public List<Object[]> countOpportunitiesByProduct(Optional<String> status) {
@@ -99,9 +93,9 @@ public class OpportunityService implements IOpportunityService {
 
     @Override
     public List<Object[]> medianQuantityByProduct() {
-        List<Object[]> objectsList = List.of(new Object[]{"HYBRID", opportunityRepository.findOrderedQuantity("HYBRID")},
-                                             new Object[]{"FLATBED", opportunityRepository.findOrderedQuantity("FLATBED")},
-                                             new Object[]{"BOX", opportunityRepository.findOrderedQuantity("BOX")});
+        List<Object[]> objectsList = List.of(new Object[]{Product.BOX, median(opportunityRepository.findOrderedQuantity("BOX"))},
+                                             new Object[]{Product.FLATBED, median(opportunityRepository.findOrderedQuantity("FLATBED"))},
+                                             new Object[]{Product.HYBRID, median(opportunityRepository.findOrderedQuantity("HYBRID"))});
         return objectsList;
     }
 }

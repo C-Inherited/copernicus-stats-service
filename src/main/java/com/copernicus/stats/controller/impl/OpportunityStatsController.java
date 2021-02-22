@@ -1,7 +1,7 @@
 package com.copernicus.stats.controller.impl;
 
 import com.copernicus.stats.controller.interfaces.IOpportunityStatsController;
-import com.copernicus.stats.service.interfaces.IOpportunityService;
+import com.copernicus.stats.service.interfaces.IOpportunityStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class OpportunityStatsController implements IOpportunityStatsController {
 
     @Autowired
-    IOpportunityService opportunityService;
+    IOpportunityStatsService opportunityService;
 
     @GetMapping("/opportunity/count/by/product")
     public List<Object[]> countOpportunitiesByProduct(Optional<String> status) {
