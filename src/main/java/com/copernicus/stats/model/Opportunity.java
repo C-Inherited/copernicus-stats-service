@@ -1,6 +1,7 @@
 package com.copernicus.stats.model;
 
-import com.copernicus.stats.enums.*;
+import com.copernicus.stats.enums.Product;
+import com.copernicus.stats.enums.Status;
 
 import javax.persistence.*;
 

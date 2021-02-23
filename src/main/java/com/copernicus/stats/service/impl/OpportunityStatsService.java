@@ -1,11 +1,9 @@
 package com.copernicus.stats.service.impl;
 
 import com.copernicus.stats.enums.Product;
-import com.copernicus.stats.repository.AccountRepository;
-import com.copernicus.stats.repository.ContactRepository;
+import com.copernicus.stats.enums.Status;
 import com.copernicus.stats.repository.OpportunityRepository;
 import com.copernicus.stats.service.interfaces.IOpportunityStatsService;
-import com.copernicus.stats.enums.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

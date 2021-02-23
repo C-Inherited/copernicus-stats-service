@@ -1,7 +1,5 @@
 package com.copernicus.stats.controller.interfaces;
 
-import java.util.List;
-
 public interface IAccountStatsController {
 
     public Double avgEmployeeCount();
