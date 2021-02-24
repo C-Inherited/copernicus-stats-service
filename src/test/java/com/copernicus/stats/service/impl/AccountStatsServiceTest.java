@@ -9,6 +9,7 @@ import com.copernicus.stats.model.Opportunity;
 import com.copernicus.stats.repository.AccountRepository;
 import com.copernicus.stats.repository.ContactRepository;
 import com.copernicus.stats.repository.OpportunityRepository;
+import com.copernicus.stats.service.interfaces.IAccountStatsService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,7 +35,7 @@ class AccountStatsServiceTest {
     @Autowired
     AccountRepository accountRepository;
     @Autowired
-    AccountStatsService accountStatsService;
+    IAccountStatsService accountStatsService;
 
     Optional<String> status1 = Optional.empty();
     Optional<String> status2 = Optional.of("OPEN");

@@ -1,5 +1,6 @@
 package com.copernicus.stats.controller.impl;
 
+import com.copernicus.stats.controller.interfaces.IAccountStatsController;
 import com.copernicus.stats.service.interfaces.IAccountStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AccountStatsController {
+public class AccountStatsController implements IAccountStatsController {
 
     @Autowired
     private IAccountStatsService accountStatsService;

@@ -1,13 +1,14 @@
 package com.copernicus.stats.service.impl;
 
 import com.copernicus.stats.repository.AccountRepository;
+import com.copernicus.stats.service.interfaces.IAccountStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import static com.copernicus.stats.utils.Math.median;
 
 @Service
-public class AccountStatsService {
+public class AccountStatsService implements IAccountStatsService {
 
     @Autowired
     private AccountRepository accountRepository;

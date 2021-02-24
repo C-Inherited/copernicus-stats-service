@@ -4,7 +4,7 @@ public interface IAccountStatsController {
 
     public Double avgEmployeeCount();
 
-    public Double orderEmployeeCount();
+    public Double medianEmployeeCount();
 
     public Integer minEmployeeCount();
 

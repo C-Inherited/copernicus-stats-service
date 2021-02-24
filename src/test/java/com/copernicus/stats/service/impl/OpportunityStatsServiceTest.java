@@ -9,20 +9,17 @@ import com.copernicus.stats.model.Opportunity;
 import com.copernicus.stats.repository.AccountRepository;
 import com.copernicus.stats.repository.ContactRepository;
 import com.copernicus.stats.repository.OpportunityRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.copernicus.stats.service.interfaces.IOpportunityStatsService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class OpportunityStatsServiceTest {
@@ -34,7 +31,7 @@ class OpportunityStatsServiceTest {
     @Autowired
     AccountRepository accountRepository;
     @Autowired
-    OpportunityStatsService opportunityStatsService;
+    IOpportunityStatsService opportunityStatsService;
 
     Optional<String> status1 = Optional.empty();
     Optional<String> status2 = Optional.of("OPEN");
