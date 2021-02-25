@@ -7,7 +7,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableScheduling
 public class StatsApplication {
 
 	public static void main(String[] args) {

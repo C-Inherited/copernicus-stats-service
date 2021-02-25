@@ -86,17 +86,45 @@ class AccountStatsControllerTest {
 
     @Test
     void avgEmployeeCount() throws Exception {
+        MvcResult result = mockMvc.perform(
+                get("/account/avg/employee-count"))
+                .andReturn();
+
+        System.out.println(result.getResponse().getContentAsString());
+
+        assertTrue(result.getResponse().getContentAsString().contains("57.5"));
     }
 
     @Test
-    void medianEmployeeCount() {
+    void medianEmployeeCount() throws Exception {
+        MvcResult result = mockMvc.perform(
+                get("/account/median/employee-count"))
+                .andReturn();
+
+        System.out.println(result.getResponse().getContentAsString());
+
+        assertTrue(result.getResponse().getContentAsString().contains("57.5"));
     }
 
     @Test
-    void minEmployeeCount() {
+    void minEmployeeCount() throws Exception {
+        MvcResult result = mockMvc.perform(
+                get("/account/min/employee-count"))
+                .andReturn();
+
+        System.out.println(result.getResponse().getContentAsString());
+
+        assertTrue(result.getResponse().getContentAsString().contains("40"));
     }
 
     @Test
-    void maxEmployeeCount() {
+    void maxEmployeeCount() throws Exception {
+        MvcResult result = mockMvc.perform(
+                get("/account/max/employee-count"))
+                .andReturn();
+
+        System.out.println(result.getResponse().getContentAsString());
+
+        assertTrue(result.getResponse().getContentAsString().contains("75"));
     }
 }
